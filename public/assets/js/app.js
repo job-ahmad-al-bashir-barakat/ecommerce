@@ -1,0 +1,40 @@
+/*!
+ *
+ * Admin Template
+ *
+ * Version: 1.0
+ * Author: ahmad al bashir barakat
+ *
+ */
+
+// Start Bootstrap JS
+// -----------------------------------
+
+(function(window, document, $, undefined) {
+    'use strict';
+
+    $(initBootstrap);
+
+    function initBootstrap() {
+
+        // POPOVER
+        // -----------------------------------
+
+        $('[data-toggle="popover"]').popover();
+
+        // TOOLTIP
+        // -----------------------------------
+
+        $('[data-toggle="tooltip"]').tooltip({
+            container: 'body'
+        });
+
+        // DROPDOWN INPUTS
+        // -----------------------------------
+        $('.dropdown input').on('click focus', function(event) {
+            event.stopPropagation();
+        });
+
+    }
+
+})(window, document, window.jQuery);
