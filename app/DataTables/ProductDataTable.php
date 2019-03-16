@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\User;
+use App\Product;
 use Yajra\DataTables\Services\DataTable;
 
 class ProductDataTable extends DataTable
@@ -22,12 +22,14 @@ class ProductDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param \App\Product $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(Product $model)
     {
-        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
+        return $model
+            ->newQuery()
+            ->get();
     }
 
     /**
@@ -39,8 +41,6 @@ class ProductDataTable extends DataTable
     {
         return $this->builder()
                     ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    ->addAction(['width' => '80px'])
                     ->parameters($this->getBuilderParameters());
     }
 
@@ -53,9 +53,20 @@ class ProductDataTable extends DataTable
     {
         return [
             'id',
-            'add your columns',
-            'created_at',
-            'updated_at'
+            'product_name',
+            'product_type_id',
+            'author_id',
+            'publisher_id',
+            'selling_price',
+            'cost_price',
+            'edition',
+            'cover_type_id',
+            'product_size_id',
+            'product_weight',
+            'nb_of_pages',
+            'release_date',
+            'ebook',
+            'audio',
         ];
     }
 

@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->increments('id');
 
             $table->string('product_name');
-            $table->string('product_image');
-            $table->unsignedInteger('category_id');
-            $table->unsignedInteger('sub_category_id');
-            $table->unsignedInteger('product_series_id');
+            $table->string('product_image')->nullable();
+            $table->unsignedInteger('category_type_id');
+            $table->unsignedInteger('category_id')->nullable();
+            $table->unsignedInteger('product_series_id')->nullable();
             $table->unsignedInteger('author_id');
             $table->unsignedInteger('author_role_id');
             $table->unsignedInteger('publisher_id');
@@ -29,21 +29,21 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('selling_price');
             $table->unsignedInteger('cost_price');
 
-            $table->string('product_isbn');
-            $table->string('product_barcode');
+            $table->string('product_isbn')->nullable();
+            $table->string('product_barcode')->nullable();
 
             $table->unsignedInteger('product_type_id');
-            $table->unsignedInteger('edition');
-            $table->unsignedInteger('cover_type_id');
-            $table->unsignedInteger('product_size_id');
-            $table->unsignedInteger('product_weight');
-            $table->unsignedInteger('nb_of_pages');
-            $table->dateTime('release_date');
+            $table->unsignedInteger('edition')->nullable();
+            $table->unsignedInteger('cover_type_id')->nullable();
+            $table->unsignedInteger('product_size_id')->nullable();
+            $table->string('product_weight')->nullable();
+            $table->unsignedInteger('nb_of_pages')->nullable();
+            $table->dateTime('release_date')->nullable();
 
-            $table->string('ebook');
-            $table->string('audio');
+            $table->string('ebook')->nullable();
+            $table->string('audio')->nullable();
 
-            $table->text('description');
+            $table->text('description')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

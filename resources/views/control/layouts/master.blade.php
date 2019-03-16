@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Control</title>
 
-    {{-- Laravel Mix - CSS File --}}
-    {{-- <link rel="stylesheet" href="{{ mix('css/control.css') }}"> --}}
-
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!-- =============== PAGE VENDOR STYLES ===============-->
     <!-- =============== BOOTSTRAP STYLES ===============-->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}" id="bscss">
+    <!-- =============== DATATABLE STYLES ===============-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <!-- =============== PAGE VENDOR STYLES ===============-->
+    @yield('css')
     <!-- =============== APP STYLES ===============-->
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}" id="maincss">
+
+
 </head>
 <body>
 
@@ -133,17 +135,23 @@
 <script src="{{ asset('assets/vendor/modernizr/modernizr.custom.js') }}"></script>
 <!-- JQUERY-->
 <script src="{{ asset('assets/vendor/jquery/dist/jquery.js') }}"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <!-- BOOTSTRAP-->
 <script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+@yield('js')
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
-
-
-{{-- Laravel Mix - JS File --}}
-{{-- <script src="{{ mix('js/control.js') }}"></script> --}}
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 </body>
 </html>

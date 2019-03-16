@@ -15,6 +15,7 @@
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
+        "orangehill/iseed": "^2.6",
         "barryvdh/laravel-ide-helper": "^2.6",
         "beyondcode/laravel-dump-server": "^1.0",
         "doctrine/dbal": "^2.9",
@@ -33,7 +34,8 @@
         "laravel": {
             "dont-discover": [
                 "barryvdh/laravel-ide-helper",
-                "doctrine/dbal"
+                "doctrine/dbal",
+                "orangehill/iseed"
             ]
         }
     },

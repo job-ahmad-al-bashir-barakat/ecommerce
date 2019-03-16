@@ -13,6 +13,6 @@ class ControlController extends Controller
      */
     public function index()
     {
-        view('control.index');
+        return \Redirect::to('control/products');
     }
 }
