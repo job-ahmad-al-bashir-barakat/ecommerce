@@ -1,14 +1,20 @@
 @extends('control.layouts.master')
 
-@section('css')
-
-@endsection
-
 @section('content')
+
     <div class="content-wrapper">
         <div class="row">
             <div class="col-12">
-                {!! $dataTable->table() !!}
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h4>Products</h4>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        {!! $dataTable->table(['class' => 'table table-striped']) !!}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

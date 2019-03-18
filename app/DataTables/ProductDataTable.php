@@ -16,7 +16,22 @@ class ProductDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->addColumn('action', 'product.action');
+            ->addColumn('action', function ($item) {
+
+                if($item->delete_at)
+                    $deleteStatus = '<span class="text-danger p-2"><i class="fas fa-ban"></i></span>';
+                else
+                    $deleteStatus = '<span class="text-success p-2"><i class="fas fa-check"></i></span>';
+
+                $update = '<a href="'.action('ProductController@edit',['id' => $item->id ]).'" class="text-muted p-2"><i class="fas fa-bars"></i></a>';
+
+                return "
+                    <div class='d-flex justify-content-between'>
+                        {$update}
+                        {$deleteStatus}
+                    </div> 
+                ";
+            });
     }
 
     /**
@@ -41,6 +56,10 @@ class ProductDataTable extends DataTable
     {
         return $this->builder()
                     ->columns($this->getColumns())
+                    ->addAction([
+                        'data'      => 'action',
+                        'title'     => '<a href="'.action('ProductController@create').'" class="btn btn-link text-success"><i class="fas fa-plus"></i></a>',
+                    ],true)
                     ->parameters($this->getBuilderParameters());
     }
 
@@ -52,21 +71,20 @@ class ProductDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'product_name',
-            'product_type_id',
-            'author_id',
-            'publisher_id',
-            'selling_price',
-            'cost_price',
-            'edition',
-            'cover_type_id',
-            'product_size_id',
-            'product_weight',
-            'nb_of_pages',
-            'release_date',
-            'ebook',
-            'audio',
+            ['data' => 'product_name' , 'title' => 'Product Name'],
+            ['data' => 'product_type_id' , 'title' => 'Product Type'],
+            ['data' => 'author_id' , 'title' => 'Author'],
+            ['data' => 'publisher_id' , 'title' => 'Publisher'],
+            ['data' => 'selling_price' , 'title' => 'Selling Price'],
+            ['data' => 'cost_price' , 'title' => 'Cost Price'],
+            ['data' => 'edition' , 'title' => 'Edition'],
+            ['data' => 'cover_type_id' , 'title' => 'Cover Type'],
+            ['data' => 'product_size_id' , 'title' => 'Product Size'],
+            ['data' => 'product_weight' , 'title' => 'Product Weight'],
+            ['data' => 'nb_of_pages' , 'title' => '#Nb Of Pages'],
+            ['data' => 'release_date' , 'title' => 'Release Date'],
+            ['data' => 'ebook' , 'title' => 'E-Book'],
+            ['data' => 'audio' , 'title' => 'Audio'],
         ];
     }
 

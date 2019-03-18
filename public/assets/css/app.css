@@ -10,6 +10,7 @@
      Component: layout
  ========================================================================== */
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);
+@import url(//fonts.googleapis.com/earlyaccess/amiri.css);
 
 html {
     direction: ltr;
@@ -18,9 +19,9 @@ html {
 
 html,
 body {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Sans Pro", Amiri, sans-serif;
     color: #656565;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     height: 100%;
 }
 
@@ -32,6 +33,11 @@ body {
     overflow-x: hidden;
 }
 
+.content-wrapper {
+    padding: 20px;
+    width: 100%;
+}
+
 .wrapper .aside-container {
     position: absolute;
     width: 220px;
@@ -39,20 +45,11 @@ body {
     left: 0;
     bottom: 0;
     z-index: 116;
-    backface-visibility: hidden;
-    background-color: #fff;
-}
-
-.wrapper .aside-container .aside-inner {
-    height: 100%;
-    width: 220px;
-    overflow: hidden;
 }
 
 .wrapper .section-container {
     position: relative;
     height: 100%;
-    margin-left: 0;
     z-index: 111;
     background-color: #f5f7fa;
     margin-bottom: 60px !important;
@@ -66,19 +63,19 @@ body {
     height: 60px;
     border-top: 1px solid #e4eaec;
     padding: 20px;
-    z-index: 109;
+    z-index: 0;
     font-size: .875rem;
     background: #fff;
-}
-
-.content-wrapper {
-    padding: 20px;
-    width: 100%;
 }
 
 .wrapper .section-container,
 .wrapper .footer-container {
     margin-left: 70px;
+}
+
+.wrapper .aside-container .aside-inner {
+    height: 100%;
+    overflow: hidden;
 }
 
 .wrapper .aside-container,
@@ -89,68 +86,56 @@ body {
 /* ========================================================================
      Component: top-navbar
  ========================================================================== */
+
 .topnavbar {
     position: relative;
-    margin-bottom: 0;
-    border-radius: 0;
     z-index: 0;
-    border: 0;
     padding: 0;
-    min-height: 56px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
 }
 
 .topnavbar .navbar-nav > .nav-item > .nav-link {
     color: #515253;
-    padding: 1.1rem .95rem;
-    font-size: 1rem;
+    padding: 1rem;
 }
 
-/* ========================================================================
-     Component: sidebar
- ========================================================================== */
-.sidebar {
-    height: 100%;
-    padding-bottom: 20px;
-    background-color: #fff;
-
-    margin-right: -17px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+/* =======================================================================
+                            Component: Sidebar
+========================================================================== */
 
 .aside-inner {
     box-shadow: 0px 10px 15px #9e9e9e;
 }
 
+.sidebar {
+    height: 100%;
+    background-color: #fff;
+    margin-right: -17px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .sidebar > .sidebar-nav {
     position: relative;
-    font-size: 14px;
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
 }
 
-.sidebar > .sidebar-nav > li > a,
-.sidebar > .sidebar-nav > li > .nav-item {
+.sidebar > .sidebar-nav > li > a {
     position: relative;
     display: block;
-    padding: 12px 24px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.7rem;
     color: #515253;
-    letter-spacing: .025em;
-    font-weight: normal;
     cursor: pointer;
 }
 
-.sidebar > .sidebar-nav > li > a {
-    padding: 15px 0;
-    text-align: center;
-}
-
-.sidebar > .sidebar-nav > li:nth-child(1n + 3) > a {
-    font-size: 0.7rem;
-    padding: 15px 0;
+.sidebar > .sidebar-nav > li > a > img {
+    width: 45px;
+    height: 45px;
 }
 
 .sidebar > .sidebar-nav > li.logo {
@@ -158,12 +143,7 @@ body {
 }
 
 .sidebar > .sidebar-nav > li.logo > a {
-    padding: 5px 0;
-}
-
-.sidebar > .sidebar-nav > li > a > img {
-    width: 45px;
-    height: 45px;
+    padding: 4px 0;
 }
 
 .sidebar > .sidebar-nav > li.avatar img {
@@ -180,7 +160,7 @@ body {
 }
 
 .sidebar > .sidebar-nav > li > a > em {
-    font-size: 1.6em;
+    font-size: 1.4em;
     width: auto;
 }
 
@@ -188,8 +168,21 @@ body {
     background-color: #f5f5f5;
 }
 
-.sidebar > .sidebar-nav > li.active > a > em {
-    color: #515253;
+/* ========================================================================
+     Component: bootstrap-reset
+ ========================================================================== */
+
+.custom-select {
+    -webkit-appearance: none;
+}
+
+.card .card-header .card-title {
+    margin-bottom: 0;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* ========================================================================
@@ -197,7 +190,7 @@ body {
  ========================================================================== */
 
 .card {
-    margin-bottom: 1.25rem;
+    margin-bottom: 20px;
 }
 
 .card .table {
@@ -208,61 +201,56 @@ body {
     border-top: 0;
 }
 
-.card.card-transparent {
-    border: 0;
-    background-color: transparent;
-    box-shadow: 0 0 0 #000;
+.card.card-default {
+    border-top-width: 3px;
+    border-color: #b9b9b9;
 }
-
-.card.card-transparent .card-header,
-.card.card-transparent .card-body {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+.card.card-default .card-header {
+    background: none;
 }
-
-.card-flat {
-    margin: 0 !important;
-    border: 0;
-}
-
-.card-columns-2 {
-    column-count: 1;
-}
-
-@media (min-width: 768px) {
-    .card-columns-2 {
-        column-count: 2;
-    }
-}
-
-.card-header > a[data-tool] {
-    display: inline-block;
-    color: #fff;
-    width: 2em;
-    text-align: center;
-}
-
-.card-default .card-header > a[data-tool] {
-    color: #c1c2c3;
-}
-
-.card-header > .badge.float-right {
-    margin-top: 3px;
-}
-
-.card-header > .badge.float-right + .badge.float-right {
-    margin-right: 10px;
-}
-
-.card-footer .pagination {
-    margin: 0;
-}
-
-.card-footer .radial-bar {
+.card.card-default .card-header .card-title h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
     margin-bottom: 0;
 }
 
-.card-footer p {
-    margin-bottom: 0;
+
+
+/* ========================================================================
+     Component: form
+ ========================================================================== */
+
+.simple-file-upload {
+    height: 85%;
+    border-top-width: 1px;
+    border-color: #dde6e9;
+}
+
+.simple-file-upload .card {
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+}
+
+.simple-file-upload .input-simple-file-upload {
+    opacity: 0;
+    display: block;
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    border: 1px solid #dde6e9;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.simple-file-upload .btn-simple-file-upload {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.simple-file-upload .simple-file-upload-placeolder {
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
 }

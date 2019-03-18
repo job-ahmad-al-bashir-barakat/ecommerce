@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}" id="bscss">
     <!-- =============== DATATABLE STYLES ===============-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+    <!-- Include the Quill library -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <!-- =============== PAGE VENDOR STYLES ===============-->
     @yield('css')
     <!-- =============== APP STYLES ===============-->
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}" id="maincss">
-
 
 </head>
 <body>
@@ -41,7 +44,7 @@
     </header>
     <!-- sidebar-->
     <aside class="aside-container">
-        <!-- START Sidebar (left)-->
+        <!-- START Sidebar-->
         <div class="aside-inner">
             <nav class="sidebar">
                 <!-- START sidebar nav-->
@@ -114,7 +117,7 @@
                 <!-- END sidebar nav-->
             </nav>
         </div>
-        <!-- END Sidebar (left)-->
+        <!-- END Sidebar-->
     </aside>
     <!-- Main section-->
     <section class="section-container">
@@ -135,12 +138,17 @@
 <script src="{{ asset('assets/vendor/modernizr/modernizr.custom.js') }}"></script>
 <!-- JQUERY-->
 <script src="{{ asset('assets/vendor/jquery/dist/jquery.js') }}"></script>
+<!-- JQUERY NICESCROLL-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js"></script>
 <!-- DataTables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <!-- BOOTSTRAP-->
 <script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 @yield('js')
 <!-- =============== APP SCRIPTS ===============-->
