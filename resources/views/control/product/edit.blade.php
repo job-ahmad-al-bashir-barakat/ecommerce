@@ -2,7 +2,8 @@
 
 @section('content')
     @include('control.product._form',[
-        'action' => action('ProductController@update'),
+        'title'  => 'Update Product',
+        'action' => action('ProductController@update',['id' => $id]),
         'method' => 'PUT'
     ])
-@stop
+@endsection

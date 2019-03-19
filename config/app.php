@@ -176,6 +176,8 @@ return [
          */
 
         App\Providers\ComposerServiceProvider::class,
+        Component\Autocomplete\AutocompleteServiceProvider::class,
+        Component\Form\FormServiceProvider::class,
     ],
 
     /*

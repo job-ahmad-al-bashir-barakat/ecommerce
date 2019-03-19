@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Author;
 use App\DataTables\ProductDataTable;
+use App\Publisher;
 use Illuminate\Http\Request;
+use App\CategoryType;
+use App\ProductSeries;
 
 class ProductController extends Controller
 {
@@ -17,6 +21,16 @@ class ProductController extends Controller
         return $datatable->render('control.product.index');
     }
 
+    private function objectForm() {
+
+        return [
+            'categoryType'  => CategoryType::all()->pluck('name','id'),
+            'productSeries' => ProductSeries::all()->pluck('name','id'),
+            'author'        => Author::all()->pluck('name','id'),
+            'publisher'     => Publisher::all()->pluck('name','id'),
+        ];
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('control.product.create');
+        return view('control.product.create')->with($this->objectForm());
     }
 
     /**
@@ -57,7 +71,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('control.product.edit');
+        return view('control.product.edit',['id' => $id])->with($this->objectForm());
     }
 
     /**

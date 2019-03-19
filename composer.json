@@ -43,7 +43,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Component\\":"packages/Component/Autocomplete/src"
+            "Component\\":"packages/Component/"
         },
         "classmap": [
             "database/seeds",

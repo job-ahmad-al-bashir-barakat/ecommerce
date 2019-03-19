@@ -24,6 +24,55 @@ var APP = {
         });
     },
 
+    dateTimePicker: {
+
+        init: function () {
+
+            var $this  = $(this);
+            var $input = $this.find('input');
+            var format = (typeof $input.data('format') !== typeof undefined) ? $input.data('format') : '';
+
+            $input.datetimepicker({
+                // debug: true,
+                locale: LANG,
+                format: format,
+                useCurrent: false,
+                icons: {
+                    time: 'fa fa-clock-o',
+                    date: 'fa fa-calendar',
+                    up: 'fa fa-chevron-up',
+                    down: 'fa fa-chevron-down',
+                    previous: 'fa fa-chevron-left',
+                    next: 'fa fa-chevron-right',
+                    today: 'fa fa-crosshairs',
+                    clear: 'fa fa-trash'
+                }
+            });
+        },
+
+        load: function(selector) {
+
+            var selector = selector ? selector : ".date";
+
+            $(selector).each(APP.dateTimePicker.init);
+        },
+    },
+
+    bootstrapTooltip: function() {
+
+        $('[data-toggle="tooltip"]').each(function () {
+
+            var $this = $(this);
+
+            $this.tooltip({
+                title: $this.html(),
+                placement: 'top',
+                html: true,
+                container: 'body'
+            });
+        });
+    },
+
     Quill: {
 
         init: function (selector) {
@@ -54,7 +103,6 @@ var APP = {
 
                quill.on('text-change', () => {
                    $(editor).parent().find('.editor-value').val(quill.getHTML());
-                   console.log('get html',quill.getHTML());
                });
            });
         }
@@ -63,5 +111,7 @@ var APP = {
 
 $(function () {
     APP.Quill.init('.editor');
+    APP.dateTimePicker.load();
     APP.simpleFileUpload();
+    APP.bootstrapTooltip();
 });

@@ -214,14 +214,66 @@ fieldset {
     margin-bottom: 0;
 }
 
-
-
 /* ========================================================================
      Component: form
  ========================================================================== */
 
+.required:after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 5px;
+    font-weight: 900;
+    position: relative;
+    content: '\f005';
+    bottom: 8px;
+    left: 4px;
+    color: #f05050;
+}
+
+/* tooltip */
+
+[data-toggle="tooltip"] > div {
+    display: none;
+}
+
+.tooltip-inner {
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-align: left;
+    padding: 0.25rem 0.6rem;
+    max-width: 100% !important;
+
+    background-color: #fefefe;
+    box-shadow: 0px 4px 8px -2px #b3b3b3;
+    border: 1px solid #cecece;
+    color: #4e4e4e;
+}
+
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+    border-top-color: #fdfdfd;
+    border-width: 0.5rem 0.5rem 0;
+}
+
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    border-width: 0 0.5rem 0.5rem;
+    border-bottom-color: #e8e8e8;;
+}
+
+.bs-tooltip-top .arrow, .bs-tooltip-auto[x-placement^="top"] .arrow {
+    bottom: 2px;
+}
+
+[data-toggle="tooltip"]:after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f05a';
+    font-size: 15px;
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+/* simple file upload */
 .simple-file-upload {
-    height: 85%;
+    height: 300px;
+    max-height: 100%;
     border-top-width: 1px;
     border-color: #dde6e9;
 }

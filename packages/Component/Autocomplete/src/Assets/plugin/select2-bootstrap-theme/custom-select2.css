@@ -1,0 +1,11 @@
+.select2 {
+    width: 100%!important;
+    max-width: 100%!important;
+}
+.select2-container--bootstrap4 .select2-selection[aria-expanded=true] {
+    border-radius: .25rem .25rem 0 0;
+}
+
+.select2-search--dropdown .select2-search__field {
+    border: 0;
+}

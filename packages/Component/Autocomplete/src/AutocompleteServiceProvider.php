@@ -99,7 +99,7 @@ class AutocompleteServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         if(!file_exists(base_path('config/autocomplete.php')))
-            $this->mergeConfigFrom(__DIR__.'/Config/autocompleteModels.php' ,'autocomplete');
+            $this->mergeConfigFrom(__DIR__.'/Config/autocomplete.php' ,'autocomplete');
 
         if(!file_exists(base_path('config/autocompleteModels.php')))
             $this->mergeConfigFrom(__DIR__.'/Config/autocompleteModels.php' ,'autocompleteModels');

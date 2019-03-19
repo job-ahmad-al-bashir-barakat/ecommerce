@@ -112,7 +112,7 @@ class AutocompleteController
         $handler = function ($request ,$object) {
 
             $class  = new Autocomplete();
-            $method = $this->autocompletel;
+            $method = $this->autocomplete;
 
             if(method_exists($class ,$method))
                 $object = $class->$method($request ,$object);
@@ -200,17 +200,10 @@ class AutocompleteController
      */
     function store(Request $request, $model)
     {
-        $text = preg_replace('/ +/',' ',$request->input('text'));
-
         $model = $this->model;
 
-        $object = $model::create([
-            "{$this->colName}" => $text,
-        ]);
-
-        return response()->json([
-            'id'        => $object[$this->colId],
-            'name'      => $object[$this->colName],
+        $model::create([
+            "{$this->colName}" => $request->input('value'),
         ]);
     }
 
