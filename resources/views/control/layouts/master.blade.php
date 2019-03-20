@@ -7,26 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Control</title>
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://ui-avatars.com/api/?background=000&color=fff&name=LO&length=4&font-size=0.6&bold=true">
     <!-- =============== VENDOR STYLES ===============-->
-    <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome/css/all.css') }}">
-    <!-- =============== BOOTSTRAP STYLES ===============-->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-    <!-- =============== DATATABLE STYLES ===============-->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <!-- =============== Quill library ===============-->
-    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
-    <!-- =============== Select2 library ===============-->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/autocomplete/plugin/select2/css/select2.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('assets/vendor/autocomplete/plugin/select2-bootstrap-theme/select2-bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/autocomplete/plugin/select2-bootstrap-theme/custom-select2.css') }}">
-    <!-- =============== Datetimepicker library ===============-->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/amiri.css">
+    <link rel="stylesheet" href="{{ mix('css/control.css') }}">
     <!-- =============== PAGE VENDOR STYLES ===============-->
     @yield('css')
-    <!-- =============== APP STYLES ===============-->
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
 </head>
 <body>
@@ -139,12 +126,14 @@
 
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- JQUERY-->
-<script src="{{ asset('assets/vendor/jquery/dist/jquery.js') }}"></script>
+<script src="{{ asset('js/jquery.js') }}"></script>
 <!-- Global Var-->
 <script>
     var DIR        = "{{ $dir }}",
         LANG       = "{{ $lang }}",
-        CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
+        OPERATION_MESSAGE_SUCCESS = "Operation Done Successfuly",
+        OPERATION_MESSAGE_FAIL = "Operation Fail";
 
     $.ajaxSetup({
         headers: {
@@ -152,33 +141,9 @@
         }
     });
 </script>
-<!-- JQUERY NICESCROLL-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.js"></script>
-<!-- DataTables -->
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<!-- BOOTSTRAP-->
-<script src="{{ asset('assets/vendor/popper.js/dist/umd/popper.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
-<!-- Quill-->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<!-- Select2-->
-<script src="{{ asset('assets/vendor/autocomplete/plugin/select2/js/select2.js') }}"></script>
-<!-- Datetimepicker-->
-<script src="{{ asset('assets/vendor/moment/moment-with-locales.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ mix('js/control.js') }}"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 @yield('js')
-<!-- =============== APP SCRIPTS ===============-->
-<script src="{{ asset('assets/vendor/autocomplete/js/autocomplete.js') }}"></script>
-<script src="{{ asset('assets/js/app.js') }}"></script>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 </body>
 </html>

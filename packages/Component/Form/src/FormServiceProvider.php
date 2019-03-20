@@ -3,7 +3,7 @@
 namespace Component\Form;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
+use Component\Form\Builder\FormBuilder;
 use Illuminate\Routing\Router;
 
 /**
@@ -35,13 +35,27 @@ class FormServiceProvider extends ServiceProvider
 
     public function boot(Router $router)
     {
-        //
+        $this->registerViews();
     }
 
-    protected function registerHelper()
+    /**
+     * register our singleton instance
+     */
+    protected function registerSingleton()
     {
-        // add helper method to my project
-        require_once('Helper/helpers.php');
+        $this->app->singleton('_Form', function ($app) {
+            return new FormBuilder();
+        });
+    }
+
+    /**
+     * Register views.
+     *
+     * @return void
+     */
+    public function registerViews()
+    {
+        $this->loadViewsFrom(__DIR__.'/Resources/Views', 'form');
     }
 
     protected function registerConfig()
@@ -55,6 +69,12 @@ class FormServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->registerHelper();
+        $this->registerSingleton();
+    }
+
+
+    public function provides()
+    {
+        return ['_Form', 'Component\Form\Builder\FormBuilder'];
     }
 }

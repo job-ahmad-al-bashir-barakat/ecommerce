@@ -18,12 +18,13 @@ class ProductDataTable extends DataTable
         return datatables($query)
             ->addColumn('action', function ($item) {
 
-                if($item->delete_at)
+                if ($item->deleted_at) {
+                    $update = '<span></span>';
                     $deleteStatus = '<span class="text-danger p-2"><i class="fas fa-ban"></i></span>';
-                else
+                } else {
+                    $update = '<a href="' . action('ProductController@edit', ['id' => $item->id]) . '" class="text-muted p-2"><i class="fas fa-bars"></i></a>';
                     $deleteStatus = '<span class="text-success p-2"><i class="fas fa-check"></i></span>';
-
-                $update = '<a href="'.action('ProductController@edit',['id' => $item->id ]).'" class="text-muted p-2"><i class="fas fa-bars"></i></a>';
+                }
 
                 return "
                     <div class='d-flex justify-content-between'>
@@ -42,8 +43,8 @@ class ProductDataTable extends DataTable
      */
     public function query(Product $model)
     {
-        return $model
-            ->newQuery()
+        return $model::with(['publisher','author', 'authorRole', 'publisherRole', 'productType', 'coverType', 'productSize'])
+            ->withTrashed()
             ->get();
     }
 
@@ -55,12 +56,12 @@ class ProductDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-                    ->columns($this->getColumns())
-                    ->addAction([
-                        'data'      => 'action',
-                        'title'     => '<a href="'.action('ProductController@create').'" class="btn btn-link text-success"><i class="fas fa-plus"></i></a>',
-                    ],true)
-                    ->parameters($this->getBuilderParameters());
+            ->columns($this->getColumns())
+            ->addAction([
+                'data' => 'action',
+                'title' => '<a href="' . action('ProductController@create') . '" class="btn btn-link text-success"><i class="fas fa-plus"></i></a>',
+            ], true)
+            ->parameters($this->getBuilderParameters());
     }
 
     /**
@@ -71,20 +72,20 @@ class ProductDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'product_name' , 'title' => 'Product Name'],
-            ['data' => 'product_type_id' , 'title' => 'Product Type'],
-            ['data' => 'author_id' , 'title' => 'Author'],
-            ['data' => 'publisher_id' , 'title' => 'Publisher'],
-            ['data' => 'selling_price' , 'title' => 'Selling Price'],
-            ['data' => 'cost_price' , 'title' => 'Cost Price'],
-            ['data' => 'edition' , 'title' => 'Edition'],
-            ['data' => 'cover_type_id' , 'title' => 'Cover Type'],
-            ['data' => 'product_size_id' , 'title' => 'Product Size'],
-            ['data' => 'product_weight' , 'title' => 'Product Weight'],
-            ['data' => 'nb_of_pages' , 'title' => '#Nb Of Pages'],
-            ['data' => 'release_date' , 'title' => 'Release Date'],
-            ['data' => 'ebook' , 'title' => 'E-Book'],
-            ['data' => 'audio' , 'title' => 'Audio'],
+            ['data' => 'product_name', 'title' => 'Product Name'],
+            ['data' => 'product_type.name', 'title' => 'Product Type'],
+            ['data' => 'author.name', 'title' => 'Author'],
+            ['data' => 'publisher.name', 'title' => 'Publisher'],
+            ['data' => 'selling_price', 'title' => 'Selling Price'],
+            ['data' => 'cost_price', 'title' => 'Cost Price'],
+            ['data' => 'edition', 'title' => 'Edition'],
+            ['data' => 'cover_type.name', 'title' => 'Cover Type'],
+            ['data' => 'product_size.name', 'title' => 'Product Size'],
+            ['data' => 'product_weight', 'title' => 'Product Weight'],
+            ['data' => 'nb_of_pages', 'title' => '#Nb Of Pages'],
+            ['data' => 'release_date', 'title' => 'Release Date'],
+            ['data' => 'ebook', 'title' => 'E-Book'],
+            ['data' => 'audio', 'title' => 'Audio'],
         ];
     }
 

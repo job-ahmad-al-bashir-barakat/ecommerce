@@ -272,18 +272,26 @@ var SELECT = {
                     $this.append(`<option selected="selected">Loading...</option>`)
                     $this.prop('disabled',true);
 
-                    $.get(remote,{ key: $(this).val() }, function (res) {
+                    if($(this).val())
+                    {
+                        $.get(remote,{ key: $(this).val() }, function (res) {
 
-                        // remove loading and empty select to Fill it
-                        $this.prop('disabled',false);
-                        $this.html('');
-                        // add default option
-                        $this.append(`<option></option>`);
-                        // get data from remote
-                        $.each(res.items,function (key, item) {
-                            $this.append(`<option value="${item.id}">${item.name}</option>`);
+                            // remove loading and empty select to Fill it
+                            $this.prop('disabled',false);
+                            $this.html('');
+                            // add default option
+                            $this.append(`<option></option>`);
+                            // get data from remote
+                            $.each(res.items,function (key, item) {
+                                $this.append(`<option value="${item.id}">${item.name}</option>`);
+                            })
                         })
-                    })
+                    }
+                    else
+                    {
+                        $this.html('');
+                        $this.prop('disabled',false);
+                    }
                 })
             }
         });

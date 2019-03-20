@@ -1,8 +1,8 @@
 <?php
 
-if(! function_exists('autAutocompleteEval'))
+if(! function_exists('autocompleteEval'))
 {
-    function autAutocompleteEval($object ,$multi = false ,$id = 'id' ,$name = 'name') {
+    function autocompleteEval($object ,$id = 'id' ,$name = 'name') {
 
         if(is_null($object))
         {
@@ -10,10 +10,7 @@ if(! function_exists('autAutocompleteEval'))
         }
         else
         {
-            if ($multi)
-                return $object->pluck(autAutocompleteLang($name), $id)->toArray();
-            else
-                return [$object->$id => $object->{autAutocompleteLang($name)}];
+            return [$object->$id => $object->$name];
         }
     }
 }

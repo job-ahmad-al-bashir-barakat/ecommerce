@@ -9,3 +9,11 @@
 .select2-search--dropdown .select2-search__field {
     border: 0;
 }
+
+.select2-container--bootstrap4 .select2-selection__clear {
+    background-color: initial;
+    color: #3c3c3c;
+}
+.select2-container--bootstrap4 .select2-selection__clear:hover {
+    background-color: initial;
+}

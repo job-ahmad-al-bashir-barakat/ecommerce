@@ -229,6 +229,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * E-Commerce Aliases...
+         */
+
+        '_Form' => \Component\Form\FormFacade::class
     ],
 
 ];

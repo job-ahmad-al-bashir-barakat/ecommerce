@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.3 on 2019-03-17 14:20:04.
+ * Generated for Laravel 5.8.3 on 2019-03-20 10:33:21.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -14411,6 +14411,183 @@ namespace Illuminate\Support {
  
 }
 
+namespace Component\Form { 
+
+    /**
+     * 
+     *
+     */ 
+    class FormFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function default()
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->default();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function required($bool = true)
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->required($bool);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function placeholder($text = '')
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->placeholder($text);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function tooltip($key, $separator = '', $width = '200px')
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->tooltip($key, $separator, $width);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function model($model, $options = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->model($model, $options);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function close()
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->close();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function text($label = '', $id = '', $name = '', $value = null, $labelClass = '', $inputClass = '', $attr = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->text($label, $id, $name, $value, $labelClass, $inputClass, $attr);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function number($label = '', $id = '', $name = '', $value = null, $labelClass = '', $inputClass = '', $attr = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->number($label, $id, $name, $value, $labelClass, $inputClass, $attr);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function inputTextGroup($label = '', $id = '', $name = '', $value = null, $labelClass = '', $inputClass = '', $inputGroupClass = '', $inputGroupIcon = '', $attr = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->inputTextGroup($label, $id, $name, $value, $labelClass, $inputClass, $inputGroupClass, $inputGroupIcon, $attr);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function inputNumberGroup($label = '', $id = '', $name = '', $value = null, $labelClass = '', $inputClass = '', $inputGroupClass = '', $inputGroupIcon = '', $attr = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->inputNumberGroup($label, $id, $name, $value, $labelClass, $inputClass, $inputGroupClass, $inputGroupIcon, $attr);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function inputUrlGroup($label = '', $id = '', $name = '', $value = null, $labelClass = '', $inputClass = '', $inputGroupClass = '', $inputGroupIcon = '', $attr = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->inputUrlGroup($label, $id, $name, $value, $labelClass, $inputClass, $inputGroupClass, $inputGroupIcon, $attr);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function select($label = '', $id = '', $name = '', $list = array(), $selected = null, $labelClass = '', $selectClass = '', $selectAttributes = array(), $optionsAttributes = array(), $optgroupsAttributes = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->select($label, $id, $name, $list, $selected, $labelClass, $selectClass, $selectAttributes, $optionsAttributes, $optgroupsAttributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function autocomplete($label = '', $id = '', $name = '', $remote = '', $list = array(), $selected = null, $labelClass = '', $selectClass = '', $selectAttributes = array(), $optionsAttributes = array(), $optgroupsAttributes = array())
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->autocomplete($label, $id, $name, $remote, $list, $selected, $labelClass, $selectClass, $selectAttributes, $optionsAttributes, $optgroupsAttributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function simpleFileUpload()
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->simpleFileUpload();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function editor($label = '', $id = '', $name = '', $value = '', $labelClass = '')
+        {
+                        /** @var \Component\Form\Builder\FormBuilder $instance */
+                        return $instance->editor($label, $id, $name, $value, $labelClass);
+        }
+         
+    }
+ 
+}
+
 namespace Collective\Html { 
 
     /**
@@ -18786,6 +18963,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class _Form extends \Component\Form\FormFacade {}
 
     class Form extends \Collective\Html\FormFacade {}
 
