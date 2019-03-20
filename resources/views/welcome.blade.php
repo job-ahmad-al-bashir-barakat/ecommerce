@@ -85,8 +85,8 @@
         </div>
 
         <div class="links">
-            <a href="https://github.com/laravel/laravel">Heroku</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <a href="https://ecommerce-task.herokuapp.com/">Heroku</a>
+            <a href="https://github.com/ahmad-al-bashir-barakat/ecommerce">GitHub</a>
             <a href="{{ url('control') }}">Control (Admin)</a>
         </div>
     </div>
