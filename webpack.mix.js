@@ -35,7 +35,6 @@ mix
     }).version();
 
 mix.scripts([
-    'resources/control/jquery/jquery.js',
     'resources/control/popper.js/popper.js',
     'resources/control/bootstrap/js/bootstrap.js',
     'resources/control/datatables/jquery.dataTables.min.js',

@@ -6,7 +6,6 @@ use Component\Autocomplete\Http\Handler\Autocomplete;
 use Illuminate\Http\Request;
 use Exception;
 use Route;
-use Auth;
 
 class AutocompleteController
 {

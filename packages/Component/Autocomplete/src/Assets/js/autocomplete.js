@@ -87,7 +87,7 @@ var SELECT2 = {
                     // language: LANG,
                     language: {
                         noResults: function () {
-                            return `<span>No Search Result <a href='#' class='autocompelte-create' onclick='SELECT2.autocomplete.create(event,${$this.attr('id')})'>Create New Item</a></span>`;
+                            return `<span>No Search Result <a href='#' class='autocompelte-create' onclick='SELECT2.autocomplete.create(event,"#${$this.attr('id')}")'>Create New Item</a></span>`;
                         }
                     },
                     minimumInputLength: letters,
