@@ -80,14 +80,14 @@
     @endif
 
     <div class="content">
-        <div class="title m-b-md">
+        <div style="font-size: 55px;" class="title m-b-md">
             E-Commerce
         </div>
 
         <div class="links">
-            <a href="https://ecommerce-task.herokuapp.com/">Heroku</a>
-            <a href="https://github.com/ahmad-al-bashir-barakat/ecommerce">GitHub</a>
-            <a href="{{ url('control') }}">Control (Admin)</a>
+            <a style="display: block; margin-bottom: 30px" href="https://ecommerce-task.herokuapp.com/">Heroku</a>
+            <a style="display: block; margin-bottom: 30px" href="https://github.com/ahmad-al-bashir-barakat/ecommerce">GitHub</a>
+            <a style="display: block; margin-bottom: 30px" href="{{ url('control') }}">Control (Admin)</a>
         </div>
     </div>
 </div>
