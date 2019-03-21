@@ -57,7 +57,7 @@ return [
      * Default html builder parameters.
      */
     'parameters' => [
-        'dom'        => "tr<'row m-0 pt-2 pb-2 border-top' <'col' i> <'col' p>>", // Bfrtip
+        'dom'        => "tr<'row m-0 pt-2 pb-2 border-top' <'col-12 col-md' i> <'col-12 col-md' p>>", // Bfrtip
         'scrollX'    => true,
         'order'      => [[1, 'desc']],
         "processing" => false,

@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ mix('css/control.css') }}">
     <!-- =============== PAGE VENDOR STYLES ===============-->
     @yield('css')
-
 </head>
 <body>
 
