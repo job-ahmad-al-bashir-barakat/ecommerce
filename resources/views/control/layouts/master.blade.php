@@ -127,7 +127,7 @@
 <!-- JQUERY-->
 <script src="{{ asset('js/jquery.js') }}"></script>
 <!-- Global Var-->
-<script async>
+<script>
     var DIR        = "{{ $dir }}",
         LANG       = "{{ $lang }}",
         CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
@@ -140,7 +140,7 @@
         }
     });
 </script>
-<script src="{{ asset(mix('js/control.js')) }}" async></script>
+<script src="{{ asset(mix('js/control.js')) }}"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 @yield('js')
 
