@@ -11,7 +11,7 @@
     <!-- =============== VENDOR STYLES ===============-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/amiri.css">
-    <link rel="stylesheet" href="{{ mix('css/control.css') }}">
+    <link rel="stylesheet" href="{{ asset(mix('css/control.css')) }}">
     <!-- =============== PAGE VENDOR STYLES ===============-->
     @yield('css')
 </head>
@@ -140,7 +140,7 @@
         }
     });
 </script>
-<script src="{{ mix('js/control.js') }}" async></script>
+<script src="{{ asset(mix('js/control.js')) }}" async></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 @yield('js')
 
