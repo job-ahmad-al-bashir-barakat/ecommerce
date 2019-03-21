@@ -118,7 +118,7 @@
     <!-- Page footer-->
     <footer class="footer-container">
         <div class="d-flex justify-content-between align-items-center">
-            <span>{{ date('Y') }} &copy; E-Commerce website made with &nbsp;<i class="fas fa-heart"></i>.</span>
+            <span>{{ date('Y') }} &copy; E-Commerce <span class="d-none d-sm-inline">website made with</span> &nbsp;<i class="fas fa-heart"></i>.</span>
             <span class="float-right">V1.0.1</span>
         </div>
     </footer>
