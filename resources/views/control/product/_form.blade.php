@@ -129,7 +129,7 @@
                     </fieldset>
                 </div>
                 <div class="card-footer">
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-center justify-content-md-end">
                         <button class="btn btn-info mr-2" type="submit">Save</button>
                         @if($method == 'PUT')
                             <button class="btn btn-danger mr-2" type="submit" data-method="delete">Delete</button>
