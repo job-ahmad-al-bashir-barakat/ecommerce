@@ -85,8 +85,7 @@
         </div>
 
         <div class="links">
-            <a style="display: block; margin-bottom: 30px" href="https://ecommerce-task.herokuapp.com/">Heroku</a>
-            <a style="display: block; margin-bottom: 30px" href="https://github.com/ahmad-al-bashir-barakat/ecommerce">GitHub</a>
+            <a style="display: block; margin-bottom: 30px" href="https://github.com/job-ahmad-al-bashir-barakat/ecommerce">GitHub</a>
             <a style="display: block; margin-bottom: 30px" href="{{ url('control') }}">Control (Admin)</a>
         </div>
     </div>
